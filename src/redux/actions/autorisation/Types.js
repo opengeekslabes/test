@@ -1,5 +1,6 @@
 export const types = {
   LOGIN: {
+    ACTION: 'LOGIN.ACTION',
     REQUEST: 'LOGIN.REQUEST',
     SUCCESS: 'LOGIN.SUCCESS',
     FAILURE: 'LOGIN.FAILURE',

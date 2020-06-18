@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Profile.css';
 import { logout } from '../../redux/actions/autorisation/Logout'
 import { connect } from 'react-redux';
@@ -6,17 +6,17 @@ import firebase from 'firebase'
 import rsf from '../../rsf/rsf'
 import store from '../../redux/store/store'
 import { call, put } from 'redux-saga/effects'
-import { types } from '../../redux/actions/user/Username'
+import { userName } from '../../redux/actions/user/Username'
 import { userReducer } from '../../redux/reducers/user/Username';
 
-const Profile: React.FC = (props: any) => {
-  console.log(props.userName.name)
-  const user = firebase.auth().currentUser;
-  console.log(user)
-  
+const Profile = (props) => {
+  const [email, setEmail] = useState(props.user.email);
+
+  //const user = firebase.auth().currentUser;
+  console.log(userName(email))
   return (
     <div className="profile-container">
-      <h1>Hello, {props.userName.name}</h1>
+      <h1>Hello, {props.user.user}</h1>
       <button
         type="button"
         onClick={props.logout}>
@@ -26,11 +26,11 @@ const Profile: React.FC = (props: any) => {
   );
 }
 
-function mapStateToProps(state: any) {
+const mapStateToProps = state => {
   return {
-    userName: state.userReducer
-  }
-}
+      user: state.userReducer
+  };
+};
 
 const mapDispatchToProps = {
   logout

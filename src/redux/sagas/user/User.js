@@ -1,13 +1,20 @@
 import { call, put } from 'redux-saga/effects'
-import { loginSuccess, loginFailure } from '../actions/autorisation/Login'
-import rsf from '../../rsf/rsf'
+import rsf from '../../../rsf/rsf'
+import firebase from 'firebase'
+import { typesUser } from '../../actions/user/Username'
 
-const user = rsf.auth().currentUser;
-console.log(user)
 
-function* getUser() {
-  const firstTodo = yield call(rsf.database.read, 'users/1');
-  yield put(gotTodo(firstTodo));
+export function* getUserSaga({email}) {
+  const allUsers = yield call(rsf.database.read, `users/`);
+  let name = 'Helno'; 
+  let allObjects = [];
+  for (const item of Object.entries(allUsers)) {
+    allObjects.push(item[1])
+  } 
+  console.log('allObjects', allObjects)
+  for (const item of allObjects) {
+    if (item.email == email) name = item.username
+  } 
+  yield put({type: typesUser.USERNAME.SUCCESS, user: name });
 }
-
 

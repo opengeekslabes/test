@@ -1,15 +1,20 @@
-import { types } from '../../actions/user/Username'
+import { typesUser } from '../../actions/user/Username'
 
 const initialState = {
-  name: null
+  user: 'null',
 }
 
 export function userReducer(state = initialState, action = {}) {
   switch (action.type) {
-    case types.USER.NAME:
+    case typesUser.USERNAME.REQUEST:
       return {   
         ...state,
-        name: action.name,
+        email: action.email
+      }
+    case typesUser.USERNAME.SUCCESS:
+      return {   
+        ...state,
+        user: action.user,
       }
     default:
       return state

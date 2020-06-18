@@ -7,9 +7,10 @@ export const signup = (email, password, name) => ({
   name
 })
 
-export const signupSuccess = name => ({
+export const signupSuccess = (name, email) => ({
   type: types.SIGNUP.SUCCESS,
-  name
+  name,
+  email
 })
 
 export const signupFailure = error => ({

@@ -1,10 +1,16 @@
-export const types = {
-  USER: {
-    NAME: 'USER.NAME',
+export const typesUser = {
+  USERNAME: {
+    REQUEST: 'USERNAME.REQUEST',
+    SUCCESS: 'USERNAME.SUCCESS'
   },
 }
 
-export const userName = name => ({
-  type: types.USER.NAME,
-  name,
+export const userName = email => ({
+  type: typesUser.USERNAME.REQUEST,
+  email
+})
+
+export const userNameSuccess = user => ({
+  type: typesUser.USERNAME.SUCCESS,
+  user
 })

@@ -1,7 +1,7 @@
 import { types } from './Types'
 
 export const login = (email, password) => ({
-  type: types.LOGIN.REQUEST,
+  type: types.LOGIN.ACTION,
   email,
   password,
 })

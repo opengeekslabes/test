@@ -25,6 +25,7 @@ export function signupReducer(state = initialState, action = {}) {
         loading: false,
         loggedIn: true,
         name: action.name, 
+        email: action.email,
       }
     case types.SIGNUP.FAILURE:
       return {
