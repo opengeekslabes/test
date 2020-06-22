@@ -9,12 +9,12 @@ export function userReducer(state = initialState, action = {}) {
     case typesUser.USERNAME.REQUEST:
       return {   
         ...state,
-        email: action.email
+        name: action.name,
       }
     case typesUser.USERNAME.SUCCESS:
       return {   
         ...state,
-        user: action.user,
+        name: action.name,
       }
     default:
       return state

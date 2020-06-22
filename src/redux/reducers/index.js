@@ -8,6 +8,7 @@ import { logoutReducer } from './autorisation/Logout'
 import { resetReducer } from './autorisation/ResetPassword'
 import { loginFBReducer } from './autorisation/LogInFB'
 import { userReducer } from './user/Username'
+import { DragAndDropReducer } from './draganddrop/DragAndDrop'
 
 export default combineReducers({
   loginReducer,
@@ -17,5 +18,6 @@ export default combineReducers({
   resetReducer,
   loginFBReducer,
   userReducer,
+  DragAndDropReducer,
   routing: routerReducer,
 })

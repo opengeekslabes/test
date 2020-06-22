@@ -11,18 +11,15 @@ import { logoutSaga } from './autorisation/Logout'
 import { sendPasswordResetEmailSaga } from './autorisation/ResetPassword'
 import { loginFacebookSaga } from './autorisation/LogInFB'
 import { getUserSaga } from './user/User'
-import { store } from '../store/store'
-
-
-const user = firebase.auth().currentUser;
 
 function* loginStatusWatcher() {
   const channel = yield call(rsf.auth.channel)
   while (true) {
     const { user } = yield take(channel)
     if (user) {
+      console.log(user)
+      yield put({type: typesUser.USERNAME.SUCCESS, name: user.displayName });
       history.replace('profile')
-      yield put({ type: typesUser.USERNAME.REQUEST });
     } else {
       history.replace('/')
     }
@@ -39,7 +36,7 @@ export function* loginRootSaga() {
     takeEvery(types.LOGOUT.REQUEST, logoutSaga),
     takeEvery(types.RESET.REQUEST, sendPasswordResetEmailSaga),
     takeEvery(types.LOGINFB.REQUEST, loginFacebookSaga),
-    takeEvery(typesUser.USERNAME.REQUEST, getUserSaga),
+//    takeEvery(typesUser.USERNAME.REQUEST, getUserSaga),
   ])
 }
 

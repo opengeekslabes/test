@@ -12,6 +12,12 @@ const SignUp: React.FC = (props: any) => {
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
 
+  const isInvalid =
+    password !== confirmPassword ||
+    password === '' ||
+    email === '' ||
+    name === '';
+
     return (
       <div className="login-container">
           <div className="login-signup">Already have an account? <span onClick={() => history.push('login')}>Log In</span></div>
@@ -69,7 +75,8 @@ const SignUp: React.FC = (props: any) => {
                         <button
                             type="button"
                             className="form-button"
-                            onClick={() => {password === confirmPassword ? props.signup(email, password, name) : alert('Passwords don\'t match')}}>
+                            onClick={() => {!isInvalid ? props.signup(email, password, name) : console.log('error');
+                            }}>
                             Sign Up Now
                         </button>
                         <div onClick={() => history.push('reset')}>Forgot your Password?</div>

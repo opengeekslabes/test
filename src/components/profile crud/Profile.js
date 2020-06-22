@@ -2,33 +2,34 @@ import React, {useState} from 'react';
 import './Profile.css';
 import { logout } from '../../redux/actions/autorisation/Logout'
 import { connect } from 'react-redux';
-import firebase from 'firebase'
-import rsf from '../../rsf/rsf'
-import store from '../../redux/store/store'
-import { call, put } from 'redux-saga/effects'
-import { userName } from '../../redux/actions/user/Username'
-import { userReducer } from '../../redux/reducers/user/Username';
+import Navigation from './Navigation'
+import Main from './Main'
 
 const Profile = (props) => {
-  const [email, setEmail] = useState(props.user.email);
-
-  //const user = firebase.auth().currentUser;
-  console.log(userName(email))
   return (
     <div className="profile-container">
-      <h1>Hello, {props.user.user}</h1>
+      <h1>Hello, {props.name.name} </h1>
       <button
         type="button"
+        className="form-button"
         onClick={props.logout}>
           Log out
       </button>
+      <div className="container m-0 p-0">
+        <div className="row">
+          <Navigation />
+          <Main />
+        </div>
+      </div>
+      
+
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-      user: state.userReducer
+      name: state.userReducer
   };
 };
 

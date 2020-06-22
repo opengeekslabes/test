@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import '@firebase/firestore'
 import ReduxSagaFirebase from 'redux-saga-firebase'
 
-const myFirebaseApp = firebase.initializeApp ({
+export const myFirebaseApp = firebase.initializeApp ({
     apiKey: "AIzaSyD9oKj_KXd-TLvHMojJwvjBNytQLpgbYOs",
     authDomain: "test-6b88b.firebaseapp.com",
     databaseURL: "https://test-6b88b.firebaseio.com",
@@ -13,4 +13,5 @@ const myFirebaseApp = firebase.initializeApp ({
 });
 const rsf = new ReduxSagaFirebase(myFirebaseApp)
 export const database = firebase.database();
+
 export default rsf

@@ -5,12 +5,12 @@ export const typesUser = {
   },
 }
 
-export const userName = email => ({
+export const userName = name => ({
   type: typesUser.USERNAME.REQUEST,
-  email
+  name
 })
 
-export const userNameSuccess = user => ({
+export const userNameSuccess = name => ({
   type: typesUser.USERNAME.SUCCESS,
-  user
+  name
 })
