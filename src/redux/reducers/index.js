@@ -9,6 +9,7 @@ import { resetReducer } from './autorisation/ResetPassword'
 import { loginFBReducer } from './autorisation/LogInFB'
 import { userReducer } from './user/Username'
 import { DragAndDropReducer } from './draganddrop/DragAndDrop'
+import { postsReducer, storageReducer } from './posts/posts'
 
 export default combineReducers({
   loginReducer,
@@ -19,5 +20,7 @@ export default combineReducers({
   loginFBReducer,
   userReducer,
   DragAndDropReducer,
+  postsReducer,
+  storageReducer,
   routing: routerReducer,
 })

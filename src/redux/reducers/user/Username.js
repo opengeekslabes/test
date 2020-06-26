@@ -1,7 +1,7 @@
 import { typesUser } from '../../actions/user/Username'
 
 const initialState = {
-  user: 'null',
+  name: null
 }
 
 export function userReducer(state = initialState, action = {}) {
@@ -11,11 +11,12 @@ export function userReducer(state = initialState, action = {}) {
         ...state,
         name: action.name,
       }
-    case typesUser.USERNAME.SUCCESS:
-      return {   
-        ...state,
-        name: action.name,
-      }
+  //  case typesUser.USERNAME.SUCCESS:
+ //     return {   
+ //       ...state,
+ //       email: action.email,
+ //       name: action.name,
+//      }
     default:
       return state
   }

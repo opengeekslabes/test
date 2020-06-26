@@ -13,5 +13,7 @@ export const myFirebaseApp = firebase.initializeApp ({
 });
 const rsf = new ReduxSagaFirebase(myFirebaseApp)
 export const database = firebase.database();
+export const storage = myFirebaseApp.storage();
+
 
 export default rsf

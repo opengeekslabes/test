@@ -4,13 +4,16 @@ import './Profile.css';
 import { connect } from 'react-redux';
 import DragAndDrop from './DragAndDrop'
 import { DragAndDropReducer } from '../../redux/reducers/draganddrop/DragAndDrop'
-import store from '../../redux/store/store'
+import firebase from 'firebase'
+import { postPush } from '../../redux/actions/posts/posts'
+import { storage } from '../../rsf/rsf'
 
 const Main = (props) => {
-  const [headline, setHeadline] = useState("Headline");
+
+  const { email, files } = props;
+  const [headline, setHeadline] = useState("");
   const [postText, setPostText] = useState("");
 
-  console.log(props.data.fileList)
 
   return (
     <div className="col-6 main">
@@ -21,7 +24,6 @@ const Main = (props) => {
       <div className="create-post-block">
         <form className="create-post-form">
           <input
-            required
             name="headline"
             id="headline"
             type="text"
@@ -31,7 +33,6 @@ const Main = (props) => {
             onChange={(e) => { setHeadline(e.target.value) }}
           /> <br/>
           <input
-            required
             name="postText"
             id="postText"
             type="text"
@@ -40,7 +41,7 @@ const Main = (props) => {
             placeholder=""
             onChange={(e) => { setPostText(e.target.value) }}
           />
-          <div className="container">
+          <div className="container p-1">
             <div className="row">
               {props.data.fileList.map(f => {
                 return (
@@ -52,7 +53,7 @@ const Main = (props) => {
               })}
               <DragAndDrop />
             </div>
-            <div>
+            <div className="d-flex justify-content-between">
               <div className="type-buttons">
                 <button className="type-button">
                   hyperlink
@@ -67,8 +68,20 @@ const Main = (props) => {
                   hashtag
                 </button>
               </div>
-              <button className="drag-and-drop-button">
-
+              <button 
+                type="submit"
+                className="type-button type-button-submit"
+                onClick={
+                  (e) => { 
+                  e.preventDefault()
+                  console.log(headline.trim())
+                  !headline.trim() || !postText.trim() ? alert('Empty fields!') 
+                  : props.postPush(email, headline, postText, files) 
+                  setHeadline('')
+                  setPostText('')
+                }}
+                >
+                  to Post
               </button>
             </div>
           </div>
@@ -80,18 +93,19 @@ const Main = (props) => {
 
 const mapStateToProps = state => {
   return {
-    data: state.DragAndDropReducer
-
+    data: state.DragAndDropReducer,
+    email: state.userReducer.email,
+    files: state.DragAndDropReducer.fileList
   };
 };
 
-//const mapDispatchToProps = {
-//  logout
-//}
+const mapDispatchToProps = {
+  postPush
+}
 
 export default connect(
   mapStateToProps,
-//  mapDispatchToProps
+  mapDispatchToProps
 )(Main)
 
 

@@ -10,7 +10,7 @@ export const userName = name => ({
   name
 })
 
-export const userNameSuccess = name => ({
+export const userNameSuccess = data => ({
   type: typesUser.USERNAME.SUCCESS,
-  name
+  data
 })

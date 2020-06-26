@@ -1,34 +1,19 @@
 import firebase from 'firebase'
 import { call, put } from 'redux-saga/effects'
-import { signupSuccess, signupFailure } from '../../actions/autorisation/SignUp'
+import { signupFailure } from '../../actions/autorisation/SignUp'
+import { loginSuccess } from '../../actions/autorisation/Login'
 import rsf from '../../../rsf/rsf'
-import { typesUser } from '../../actions/user/Username'
+import { userName } from '../../actions/user/Username'
+import { userReducer } from '../../reducers/user/Username'
 
 export function* createUserSaga({email, password, name}) {
+  console.log(name)
   try {
-    const user = yield call(rsf.auth.createUserWithEmailAndPassword, email, password);
+    const user = yield call(rsf.auth.createUserWithEmailAndPassword, email, password)
+    console.log(name)
+    yield put(loginSuccess(user));
 
-    const currentUser = firebase.auth().currentUser;
-    currentUser.updateProfile({
-      displayName: name,
-    }).then(function() {
-    }).catch(function(error) {
-      console.log(error.message)
-    });
-    yield put(signupSuccess(name, email));
-
-  }
-  catch(error) {
+  } catch(error) {
     yield put(signupFailure(error));
   }
 }
-export function* addUser({email}) {
-  try {
-    const key = yield call(rsf.database.create, 'users/', {
-      email: email,
-    })
-  }
-  catch(error) {
-    yield put(signupFailure(error));
-  }
-};

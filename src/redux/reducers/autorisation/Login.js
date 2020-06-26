@@ -16,12 +16,16 @@ export function loginReducer(state = initialState, action = {}) {
         error: null,
       }
     }
-    case types.LOGIN.SUCCESS:
+    case types.LOGIN.SUCCESS:{
+
+console.log('---------');
+
       return {
         ...state,
         loading: false,
         user: action.user,
       }
+    }
     case types.LOGIN.FAILURE:
       return {
         ...state,
