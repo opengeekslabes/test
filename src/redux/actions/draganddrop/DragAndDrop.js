@@ -2,7 +2,8 @@ export const typesDragAndDrop = {
   DROP: {
     DROPDEPTH: 'DROP.DROPDEPTH',
     INDROPZONE: 'DROP.INDROPZONE',
-    FILETOLIST: 'DROP.FILETOLIST'
+    FILETOLIST: 'DROP.FILETOLIST',
+    REMOVE: 'DROP.REMOVE'
   },
 }
 
@@ -18,5 +19,10 @@ export const inDropZone = data => ({
 
 export const files = data => ({
   type: typesDragAndDrop.DROP.FILETOLIST,
+  data
+})
+
+export const fileRemove = data => ({
+  type: typesDragAndDrop.DROP.REMOVE,
   data
 })

@@ -1,16 +1,22 @@
-export const typesUser = {
-  USERNAME: {
-    REQUEST: 'USERNAME.REQUEST',
-    SUCCESS: 'USERNAME.SUCCESS'
-  },
-}
+import { types } from '../autorisation/Types'
 
-export const userName = name => ({
-  type: typesUser.USERNAME.REQUEST,
-  name
+export const getUserData = () => ({
+  type: types.USER.REQUEST,
 })
 
-export const userNameSuccess = data => ({
-  type: typesUser.USERNAME.SUCCESS,
-  data
+export const setUserData = (data) => ({
+  type: types.USER.RESPONSE,
+  data,
+})
+
+export const refreshUserData = () => ({
+  type: types.REFRESH.ACTION,
+})
+
+export const refreshUserFail = () => ({
+  type: types.REFRESH.FAIL,
+})
+
+export const userError = () => ({
+  type: types.USER.ERROR,
 })

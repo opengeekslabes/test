@@ -1,18 +1,13 @@
 import { call, put } from 'redux-saga/effects'
-import { loginSuccess, loginFailure } from '../../actions/autorisation/Login'
-import { types } from '../../actions/autorisation/Types'
-import { typesUser } from '../../actions/user/Username'
 import rsf from '../../../rsf/rsf'
 import firebase from 'firebase'
-import { database } from '../../../rsf/rsf'
-import { postGet, postGetSuccess, sendFile, setFile } from '../../actions/posts/posts'
+import { postGet, postGetSuccess, sendFile } from '../../actions/posts/posts'
 
-export function* createPostSaga({email, postHeadline, postText, files}) {
-//  yield put({type: types.LOGIN.REQUEST})
+export function* createPostSaga({data}) {
   try {
-    console.log('IM TRYING', email)
+    console.log(data.email)
 
-      const path = email.split('').filter(item => item !== '.').join('');
+      const path = data.email.split('').filter(item => item !== '.').join('');
       const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']   
       const date = new Date();
       const postDate = `${months[date.getMonth()]} ${date.getDate()}`;
@@ -21,36 +16,33 @@ export function* createPostSaga({email, postHeadline, postText, files}) {
       firebase.database().ref(`users/${path}`).child('posts').push({
         key: Date.now(),
         postDate: postDate,
-        postHeadline: postHeadline,
-        postText: postText,
+        postHeadline: data.headline,
+        postText: data.postText,
         postTime: postTime,
       });
-      console.log("email: ", email)
-      yield put(postGet(email))
-      for (const file of files) {
+      yield put(postGet({path}))
+      const email = data.email;
+      //TODO  SMT
+      for (const file of data.files) {
         console.log(file)
-        yield put(sendFile(file, email))
+        yield put(sendFile({file, email}))
       }
     }
-//    yield put(loginSuccess(user));
 
   catch(error) {
     console.log('NONONO')
-//    yield put(loginFailure(error));
   }
 }
 
-export function* getPostsSaga({email}) {
-  const path = email.split('').filter(item => item !== '.').join('');
-  const posts = yield call(rsf.database.read, `users/${path}`);
-//  if(!posts) return
+export function* getPostsSaga({data}) {
+  const posts = yield call(rsf.database.read, `users/${data.path}`);
   yield put(postGetSuccess(posts));
 }
 
-export function* deletePostSaga({email, id}) {
-  const path = email.split('').filter(item => item !== '.').join('');
-  console.log('SAGA WORKIN', id)
-  yield call(rsf.database.delete, `users/${path}/posts/${id}`);
-  console.log("EMAIL :", email, id)
-  yield put(postGet(email))
+export function* deletePostSaga({data}) {
+  console.log(data)
+  const path = data.email.split('').filter(item => item !== '.').join('');
+  console.log('SAGA WORKIN', data.ind)
+  yield call(rsf.database.delete, `users/${path}/posts/${data.ind}`);
+  yield put(postGet({path}))
 }

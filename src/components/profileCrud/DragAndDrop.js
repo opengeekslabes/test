@@ -1,6 +1,5 @@
 import React from 'react';
-import '../profile crud/Profile.css'
-import { DragAndDropReducer } from '../../redux/reducers/draganddrop/DragAndDrop'
+import '../profileCrud/Profile.css'
 import { dropDepth, inDropZone, files } from '../../redux/actions/draganddrop/DragAndDrop'
 import { connect } from 'react-redux';
 

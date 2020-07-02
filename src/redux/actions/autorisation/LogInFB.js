@@ -1,15 +1,6 @@
 import { types } from './Types'
 
 export const loginFB = () => ({
-  type: types.LOGINFB.REQUEST,
+  type: types.LOGINFB.ACTION,
 })
 
-export const loginFBSuccess = data => ({
-  type: types.LOGINFB.SUCCESS,
-  data,
-})
-
-export const loginFBFailure = error => ({
-  type: types.LOGINFB.FAILURE,
-  error,
-})

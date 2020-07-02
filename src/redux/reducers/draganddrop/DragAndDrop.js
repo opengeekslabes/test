@@ -3,7 +3,9 @@ import { typesDragAndDrop } from '../../actions/draganddrop/DragAndDrop'
 const initialState = {
   dropDepth: 0,
   inDropZone: false,
-  fileList: []
+  fileList: [],
+  path: '',
+  name: '',
 }
 
 export function DragAndDropReducer(state = initialState, action) {
@@ -25,6 +27,12 @@ export function DragAndDropReducer(state = initialState, action) {
         ...state,
         fileList: state.fileList.concat(action.data)
       };
+    case typesDragAndDrop.DROP.REMOVE: {
+      return {
+        ...state,
+        fileList: state.fileList.filter((_, index) => index !== action.data.i),
+      };
+    }
     default:
       return state;
   }

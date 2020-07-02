@@ -1,8 +1,8 @@
 import { types } from './Types'
 
-export const reset = email => ({
+export const reset = data => ({
   type: types.RESET.REQUEST,
-  email
+  data
 })
 
 export const resetSuccess = user => ({

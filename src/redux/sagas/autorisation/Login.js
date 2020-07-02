@@ -1,16 +1,30 @@
-import { call, put } from 'redux-saga/effects'
-import { loginSuccess, loginFailure } from '../../actions/autorisation/Login'
-import { types } from '../../actions/autorisation/Types'
-import { typesUser } from '../../actions/user/Username'
+import { call, put, take } from 'redux-saga/effects'
+import { types } from "../../actions/autorisation/Types";
 import rsf from '../../../rsf/rsf'
 
-export function* loginSaga({email, password}) {
-  yield put({type: types.LOGIN.REQUEST})
-  try {
-    const user = yield call(rsf.auth.signInWithEmailAndPassword, email, password);
-    yield put(loginSuccess(user));
-  }
-  catch(error) {
-    yield put(loginFailure(error));
-  }
+export function* loginSaga({ data }) {
+    console.log('TRYIN TO LOGIN')
+    try {
+        const { user } = yield call(rsf.auth.signInWithEmailAndPassword, data.email, data.password);
+
+        yield put({ type: types.USER.RESPONSE, data: user });
+    } catch (error) {
+        yield put({ type: types.USER.ERROR, error });
+    }
 }
+
+export function* refreshUserData() {
+    yield put({ type: types.USER.REQUEST })
+    const channel = yield call(rsf.auth.channel)
+    try {
+        const { user } = yield take(channel)
+        if (user) {
+            yield put({ type: types.USER.RESPONSE, data: user })
+        } else {
+            yield put({ type: types.REFRESH.FAIL })
+        }
+    } catch (error) {
+        yield put({ type: types.USER.ERROR, error });
+    }
+}
+

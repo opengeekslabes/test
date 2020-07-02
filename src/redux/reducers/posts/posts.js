@@ -1,4 +1,4 @@
-import { typesPosts, typesSend } from '../../actions/posts/posts'
+import { postsTypes } from '../../actions/posts/postsTypes'
 import { routerActions } from 'react-router-redux'
 
 const initialState = {
@@ -15,39 +15,38 @@ const initialState = {
 
 export function postsReducer(state = initialState, action = {}) {
   switch (action.type) {
-    case typesPosts.POST.PUSH:
+    case postsTypes.POST.PUSH:
       return {   
         ...state,
-        email: action.email,
-        postHeadline: action.postHeadline,
-        postText: action.postText,
-        files: action.files
+        email: action.data,
+        postHeadline: action.data,
+        postText: action.data,
+        files: action.data
       }
-    case typesPosts.POST.GET: 
+    case postsTypes.POST.GET: 
       return {   
-        email: action.email,
         ...state,
+        email: action.data,
+
       }
   
-    case typesPosts.POST.GET_SUCCESS:
-      if(!action.posts) action.posts = {}
+    case postsTypes.POST.GET_SUCCESS:
+      if(!action.data) action.data = {}
     return {   
         ...state,
-        posts: action.posts
+        posts: action.data
     }
-    case typesPosts.POST.REMOVE:
+    case postsTypes.POST.REMOVE:
         return {   
             ...state,
-            email: action.email,
-            id: action.id,
-            index: action.index
+            email: action.data,
+            id: action.data,
+            index: action.data
         }
     default:
       return state
   }
 }
-
-
 
 const initialStateSend = {
   file: null,
@@ -57,22 +56,22 @@ const initialStateSend = {
 
 export function storageReducer(state = initialStateSend, action = {}) {
   switch (action.type) {
-    case typesSend.SET_FILE:
+    case postsTypes.SEND.SET_FILE:
       return {
         ...state,
-        file: action.file,
+        file: action.data,
       }
-    case typesSend.SET_FILE_URL:
+    case postsTypes.SEND.SET_FILE_URL:
       return {
         ...state,
         loading: false,
-        url: action.url,
+        url: action.data,
       }
-    case typesSend.SEND_FILE:
+    case postsTypes.SEND.SEND_FILE:
       return {
         ...state,
-        file: action.file,
-        email: action.email,
+        file: action.data,
+        email: action.data,
         loading: true,
       }
     default:

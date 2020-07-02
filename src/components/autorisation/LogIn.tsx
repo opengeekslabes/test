@@ -1,18 +1,16 @@
 import React, { useState  } from 'react';
 import './LogIn.css';
-import { loginGoogle } from '../../redux/actions/autorisation/LogInGoogle'
-import { loginFB } from '../../redux/actions/autorisation/LogInFB'
-import { login } from '../../redux/actions/autorisation/Login'
+import actions from '../../redux/actions/autorisation/'
 import { connect } from 'react-redux';
-import { history } from '../App'
+import { withRouter } from 'react-router-dom';
 
 const LogIn: React.FC = (props: any) => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("user@user.user1");
+  const [password, setPassword] = useState<string>("user@user.user1");
 
   return (
     <div className="login-container">
-        <div className="login-signup">Don’t have an account? <span onClick={() => history.push('/')}>Sign Up</span></div>
+        <div className="login-signup">Don’t have an account? <span onClick={() => props.history.push('/')}>Sign Up</span></div>
         <div className="login-block">
           <div>
               <div className="login-title">Log in</div>
@@ -45,11 +43,13 @@ const LogIn: React.FC = (props: any) => {
                       <button
                           type="button"
                           className="form-button"
-                          onClick={() => props.login(email, password)}
+                          onClick={() => {
+                            console.log(props.login)
+                            props.login({email, password})}}
                       >
                           Log In Now
                       </button>
-                      <div onClick={() => history.push('reset')}>Forgot your Password?</div>
+                      <div onClick={() => props.history.push('reset')}>Forgot your Password?</div>
                   </div>    
                   <div className="login-center">
                       or
@@ -62,13 +62,16 @@ const LogIn: React.FC = (props: any) => {
   );
 };
 
-const mapDispatchToProps = {
-  loginGoogle,
-  loginFB,
-  login
-}
 
-export default connect(
-  null,
-  mapDispatchToProps,
-  )(LogIn)
+const mapDispatchToProps = (dispatch: any) => ({
+  login: (data: any) => dispatch(actions.login.login(data)),
+  loginGoogle: () => dispatch(actions.logInGoogle.loginGoogle()),
+  loginFB: () => dispatch(actions.logInFB.loginFB()),
+})
+
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps,
+    )(LogIn)
+)

@@ -1,17 +1,6 @@
 import { types } from './Types'
 
-export const login = (email, password) => ({
+export const login = data => ({
   type: types.LOGIN.ACTION,
-  email,
-  password,
-})
-
-export const loginSuccess = user => ({
-  type: types.LOGIN.SUCCESS,
-  user
-})
-
-export const loginFailure = error => ({
-  type: types.LOGIN.FAILURE,
-  error,
+  data,
 })

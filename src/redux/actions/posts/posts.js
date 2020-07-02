@@ -1,57 +1,36 @@
-export const typesPosts = {
-  POST: {
-    PUSH: 'POST.PUSH',
-    GET: 'POST.GET',
-    GET_SUCCESS: 'POST.GET_SUCCESS',
-    REMOVE: 'POST.REMOVE',
-  },
-}
+import {postsTypes} from './postsTypes'
 
-export const typesSend = {
-  SEND_FILE: 'SEND_FILE',
-  SET_FILE: 'SET_FILE',
-  SET_FILE_URL: 'SET_FILE_URL',
-}
-
-export const setFile = file => ({
-  type: typesSend.SET_FILE,
-  file,
+export const setFile = data => ({
+  type: postsTypes.SEND.SET_FILE,
+  data,
 })
 
-export const setFileURL = url => ({
-  type: typesSend.SET_FILE_URL,
-  url,
+export const setFileURL = data => ({
+  type: postsTypes.SEND.SET_FILE_URL,
+  data,
 })
 
-export const sendFile = (file, email) => ({
-  type: typesSend.SEND_FILE,
-  file,
-  email
+export const sendFile = data => ({
+  type: postsTypes.SEND.SEND_FILE,
+  data
 })
 
-
-
-export const postPush = (email, postHeadline, postText, files) => ({
-  type: typesPosts.POST.PUSH,
-  email,
-  postHeadline,
-  postText,
-  files
+export const postPush = data => ({
+  type: postsTypes.POST.PUSH,
+  data
 })
 
-export const postGet = email => ({
-  type: typesPosts.POST.GET,
-  email
+export const postGet = data => ({
+  type: postsTypes.POST.GET,
+  data
 })
 
-export const postGetSuccess = (posts) => ({
-  type: typesPosts.POST.GET_SUCCESS,
-  posts
+export const postGetSuccess = data => ({
+  type: postsTypes.POST.GET_SUCCESS,
+  data
 })
 
-export const postRemove = (email, id, index) => ({
-  type: typesPosts.POST.REMOVE,
-  email,
-  id,
-  index
+export const postRemove = data => ({
+  type: postsTypes.POST.REMOVE,
+  data
 })
