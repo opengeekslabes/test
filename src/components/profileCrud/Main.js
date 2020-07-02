@@ -10,6 +10,9 @@ const Main = (props) => {
   const { user, files } = props;
   const [headline, setHeadline] = useState("");
   const [postText, setPostText] = useState("");
+  const [hyperlink, setHyperlink] = useState(false);
+  const textAreaRef = React.createRef();
+
 
   return (
     <div className="col-8 main">
@@ -28,14 +31,23 @@ const Main = (props) => {
             placeholder="Headline"
             onChange={(e) => { setHeadline(e.target.value) }}
           /> <br />
-          <input
+          <textarea
             name="postText"
             id="postText"
             type="text"
             value={postText}
             className="form-input"
             placeholder=""
-            onChange={(e) => { setPostText(e.target.value) }}
+            ref={textAreaRef}
+            onChange={(e) =>  setPostText(e.target.value) }
+            onSelect={(e) => {
+              const input = e.target;
+              let selected = input.value.slice(input.selectionStart, input.selectionEnd);
+        //      input.setRangeText(`*${selected}*`);
+              return
+              setHyperlink(false)
+            
+            }}
           />
           <div className="container p-1">
             <div className="row">
@@ -49,7 +61,13 @@ const Main = (props) => {
             </div>
             <div className="d-flex justify-content-between">
               <div className="type-buttons">
-                <button className="type-button">
+                <button className="type-button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setHyperlink(true)
+                    textAreaRef.current.focus();
+                  }}  
+                >
                   hyperlink
                 </button>
                 <button className="type-button">

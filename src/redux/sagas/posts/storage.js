@@ -1,4 +1,4 @@
-import { all, call, put, select, takeEvery } from 'redux-saga/effects'
+import { call, put } from 'redux-saga/effects'
 
 import { setFileURL } from '../../actions/posts/posts'
 

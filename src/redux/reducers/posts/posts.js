@@ -1,5 +1,4 @@
 import { postsTypes } from '../../actions/posts/postsTypes'
-import { routerActions } from 'react-router-redux'
 
 const initialState = {
     email: null,

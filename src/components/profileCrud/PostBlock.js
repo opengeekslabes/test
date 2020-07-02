@@ -12,7 +12,7 @@ const PostBlock = (props) => {
         props.postGet({path})
     }, [])
 
-
+    console.log(props.user.photoURL)
     const [flag, setFlag] = useState(false);
 
     const posts = props.posts ? Object.values(props.posts) : false;
@@ -31,12 +31,14 @@ const PostBlock = (props) => {
         <div className="col-4 post-block p-0">
             <div className="profile-block d-flex justify-content-end align-items-center">
                 <div className="profile-name">{props.user.displayName}</div>
-                <div className="profile-photo"></div>
+                <div className="profile-photo-container">
+                    <img className="profile-photo" src={props.user.photoURL} />
+                </div>
                 <div className="profile-menu-block">
                     <i className={flag ? "fas fa-caret-down" : "fas fa-sort-up"} onClick={() => setFlag(!flag)}></i>
                     <div className={flag ? "profile-menu" : "profile-menu d-none"}>
                         <div className="profile-menu-item mb-1"
-                             onClick={() => props.history.push('settings')}>Settings
+                             onClick={() => props.history.push('/home/posts/settings')}>Settings
                         </div>
                         <div className="profile-menu-item" onClick={props.logout}>Log Out</div>
                     </div>

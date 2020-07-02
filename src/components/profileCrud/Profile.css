@@ -178,11 +178,18 @@ body {
   padding: 40px 0 15px 25px;
 }
 
-.profile-photo {
-  width: 30px; height: 30px; 
+.profile-photo-container {
+  width: 30px; 
+  height: 30px;   
   border-radius: 50%; 
-  background: url(https://www.meme-arsenal.com/memes/b73d0ff9295a4a2fd3f0d8d1d872ebc0.jpg) no-repeat; 
-  background-size: auto 30px; 
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 50px;
+  height: auto;
+
 }
 
 .postDate {
@@ -342,4 +349,27 @@ body {
 
 .login-center {
   text-align: center;
+}
+
+
+
+
+
+/* SETTINGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.settings-headline {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #001540;
+  padding: 15px 0 15px 0;
+}
+
+.change-profile-photo {
+  height: 28px;
+  padding: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #000000;
+  border: none;
 }

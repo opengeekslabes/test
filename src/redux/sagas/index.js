@@ -11,6 +11,8 @@ import {loginFacebookSaga} from './autorisation/LogInFB'
 import {createPostSaga, deletePostSaga, getPostsSaga} from './posts/posts'
 import {sendFileSaga} from './posts/storage'
 import {deleteFileSaga} from './draganddrop/draganddrop'
+import {editProfTypes} from '../actions/changeprofile/changeprofile'
+import {editProfilePicSaga, uProfileSaga} from './changeprofile/changeprofile'
 
 export function* loginRootSaga() {
   yield all([
@@ -26,7 +28,9 @@ export function* loginRootSaga() {
     takeLatest(postsTypes.POST.PUSH, createPostSaga),
     takeLatest(postsTypes.POST.GET, getPostsSaga),
     takeLatest(postsTypes.POST.REMOVE, deletePostSaga),
-//    takeLatest(typesDragAndDrop.DROP.REMOVE, deleteFileSaga),
+    takeLatest(postsTypes.POST.REMOVE, deletePostSaga),
+    takeLatest(editProfTypes.EDITPROFILE.ACTION, editProfilePicSaga),
+    takeLatest(editProfTypes.EDITPROFILE.SUCCESS, uProfileSaga),
   ])
 }
 

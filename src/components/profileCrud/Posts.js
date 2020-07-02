@@ -5,7 +5,7 @@ import PostBlock from './PostBlock'
 import Settings from './Settings'
 import { Route, Switch } from 'react-router-dom'
 
-const Posts = (props) => { 
+const Posts = () => { 
 
   return (
     <div className="col-10 p-0">      
