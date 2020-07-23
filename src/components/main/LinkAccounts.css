@@ -1,0 +1,149 @@
+.link-accounts {
+    margin: 146px 15px 0 15px;
+    padding: 0%;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .link-accounts-block {
+    background-color: #E0E0E0;
+    padding: 8px 15px 25px;
+  }
+  
+  .link-accounts-headline {
+    padding: 6px 14px;
+    background: #FFFFFF;
+    max-width: 590px;
+    margin-bottom: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+  
+  .link-accounts-description {
+    padding: 18px;
+    background: #FFFFFF;
+    max-width: 750px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+  }
+  
+  .social-accounts-links-headline {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+  }
+  
+  .social-accounts-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .social-account-button {
+    display: flex;
+    align-items: center;
+    width: 144px;
+    height: 48px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+
+  .social-account-button:hover {
+    background-color: #333333;
+    color: #E0E0E0;
+  }
+  
+  .social-account-icon {
+    margin-right: 15px;
+    padding-left: 20px;
+  }
+
+  .chosen-accounts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .chosen-account {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    width: 220px;
+    height: 95px;
+    background: #FFFFFF;
+    border-radius: 4px;
+  }
+
+  .chosen-account-picture-container {
+    position: relative;
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .chosen-account-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  .chosen-account-description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chosen-account-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .chosen-account-type {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #828282;
+  }
+
+  .social-account-mini {
+    position: absolute;
+    top: 53px;
+    right: 5px;
+    color: blue;
+  }
+
+  .chosen-account-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .social-accounts-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-accounts-footer-button {
+    width: 120px;
+    height: 25px;
+    background-color: #99A8B9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+  }
+
+  .social-accounts-footer-button:hover {
+    background-color: #007AFF;;
+  }
