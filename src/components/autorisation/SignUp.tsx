@@ -1,5 +1,9 @@
 import React, {useEffect, useState} from 'react';
+<<<<<<< HEAD
 import './Autorisation.css';
+=======
+import './LogIn.css';
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
 import {connect} from 'react-redux';
 import actions from '../../redux/actions/autorisation/'
 import {withRouter} from 'react-router-dom';
@@ -91,8 +95,13 @@ const SignUp: React.FC = (props: any) => {
                         </div>
                         <div className="login-center">
                             or
+<<<<<<< HEAD
                             <div>Log In with: <i className="social-login-button fab fa-facebook fa-2x" onClick={props.loginFB}></i> <i
                                 className="social-login-button fab fa-google-plus fa-2x" onClick={props.loginGoogle}></i></div>
+=======
+                            <div>Log In with: <i className="fab fa-facebook fa-2x" onClick={props.loginFB}></i> <i
+                                className="fab fa-google-plus fa-2x" onClick={props.loginGoogle}></i></div>
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
                         </div>
                     </form>
                 </div>

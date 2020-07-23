@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17fcc5eb-dfae-42f8-8231-f84c151fb9b4" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -32,6 +33,54 @@
       <change beforePath="$PROJECT_DIR$/src/components/profileCrud/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profileCrud/Profile.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/sagas/posts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/posts/posts.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/components/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PublicRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autorisation/LogIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autorisation/LogIn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autorisation/LogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autorisation/LogIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autorisation/ResetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autorisation/ResetPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autorisation/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autorisation/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/DragAndDrop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/Main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/Navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/PostBlock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/Profile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile crud/Profile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/LogInFB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/LogInFB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/LogInGoogle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/LogInGoogle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/autorisation/Types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/autorisation/Types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/draganddrop/DragAndDrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/draganddrop/DragAndDrop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/posts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/posts/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/user/Username.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/user/Username.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/LogInFB.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/LogInGoogle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/Logout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/ResetPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/autorisation/SignUp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/draganddrop/DragAndDrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/draganddrop/DragAndDrop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/posts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/posts/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/user/Username.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/user/Username.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/LogInFB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/LogInFB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/LogInGoogle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/LogInGoogle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/autorisation/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/autorisation/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/posts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/posts/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/posts/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sagas/posts/storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sagas/user/User.js" beforeDir="false" />
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +130,10 @@
       <workItem from="1593530566674" duration="10421000" />
       <workItem from="1593595644713" duration="714000" />
       <workItem from="1593608060212" duration="998000" />
+<<<<<<< HEAD
       <workItem from="1594285246544" duration="809000" />
+=======
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
     </task>
     <servers />
   </component>
@@ -105,9 +157,16 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="368" y="161" width="1397" height="693" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1593608101329" />
+<<<<<<< HEAD
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1594285259067">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594285259067" />
+=======
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1593540874273">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1593540874273" />
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
   </component>
 </project>

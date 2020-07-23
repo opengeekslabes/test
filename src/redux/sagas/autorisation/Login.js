@@ -3,6 +3,10 @@ import { types } from "../../actions/autorisation/Types";
 import rsf from '../../../rsf/rsf'
 
 export function* loginSaga({ data }) {
+<<<<<<< HEAD
+=======
+    console.log('TRYIN TO LOGIN')
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
     try {
         const { user } = yield call(rsf.auth.signInWithEmailAndPassword, data.email, data.password);
 

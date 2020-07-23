@@ -1,5 +1,6 @@
 import {postsTypes} from './postsTypes'
 
+<<<<<<< HEAD
 export const sendFile = data => ({
   type: postsTypes.SEND.SEND_FILE,
   data
@@ -13,6 +14,21 @@ export const getFileURL = data => ({
 export const setFile = data => ({
   type: postsTypes.SEND.SET_FILE,
   data,
+=======
+export const setFile = data => ({
+  type: postsTypes.SEND.SET_FILE,
+  data,
+})
+
+export const setFileURL = data => ({
+  type: postsTypes.SEND.SET_FILE_URL,
+  data,
+})
+
+export const sendFile = data => ({
+  type: postsTypes.SEND.SEND_FILE,
+  data
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
 })
 
 export const postPush = data => ({

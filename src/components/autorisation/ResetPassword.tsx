@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import './Autorisation.css';
+=======
+import './LogIn.css';
+>>>>>>> 2e24a8e729bd27a93245c5b0d7f745e211ccada3
 import {connect} from 'react-redux';
 import actions from '../../redux/actions/autorisation/'
 import {withRouter} from 'react-router-dom';
